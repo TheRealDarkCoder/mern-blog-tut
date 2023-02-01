@@ -3,7 +3,7 @@ const router = express.Router();
 const Post = require('../models/post.js');
 
 router.get('/blog', (req, res, next) => {
-    Post.find({}, 'title author date')
+    Post.find({}, 'title author date body')
     .then((data) => res.json(data))
     .catch(next);
 });
